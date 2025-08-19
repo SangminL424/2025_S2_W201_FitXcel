@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 
-import myposter from '../../assets/images/poster.png'
+import { Link } from 'expo-router'
+import myposter from '../assets/images/poster.png'
 const app = () => {
   return (
     <View style={styles.container}>
@@ -9,7 +10,8 @@ const app = () => {
         resizeMode="cover"
         style={styles.image}
       >
-        <Text style={styles.text}>FitXcel</Text>
+        <Text style={styles.title}>FitXcel</Text>
+        <Link href="/explore" style={styles.link}>Explore</Link>  
       </ImageBackground>
     </View>
   )
@@ -35,5 +37,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    marginBottom: 20,
+  },
+  link: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 4,
   },
 })
