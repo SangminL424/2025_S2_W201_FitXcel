@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Pressable} from 'react-native'
 
 import { Link } from 'expo-router'
 import myposter from '../assets/images/poster.png'
@@ -11,7 +11,12 @@ const app = () => {
         style={styles.image}
       >
         <Text style={styles.title}>FitXcel</Text>
-        <Link href="/explore" style={styles.link}>Explore</Link>  
+        
+        <Link href="/explore" style={{ marginHorizontal: 'auto'}} asChild>
+          <Pressable style={styles.button}>
+           <Text style={styles.buttonText}>Explore</Text>
+          </Pressable>
+        </Link>  
       </ImageBackground>
     </View>
   )
@@ -30,7 +35,14 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
   },
-
+  title: {
+    color: 'white',
+    fontSize: 42,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    marginBottom: 20,
+  },
   text: {
     color: 'white',
     fontSize: 42,
@@ -45,6 +57,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     textDecorationLine: 'underline',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 4,
+  },
+  button: {
+    height: 60,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderRadius: 20,
+    padding: 6,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: 4,
   },
